@@ -27,17 +27,9 @@ function toObject<TIn, TOut, T extends PropertyTransformer<TIn, TOut>>(
   return out as TransformOutput<T>;
 }
 
-function toValues<TIn, TOut, T extends PropertyTransformer<TIn, TOut>>(
-  transformer: T,
-  data: TIn,
-): TransformOutput<T>[keyof T][] {
-  return Object.values(toObject(transformer, data));
-}
-
 const define: typeof Object.assign = (...args: unknown[]) => Object.assign({}, ...args);
 
 export const xf = {
   define,
   toObject,
-  toValues,
 };
