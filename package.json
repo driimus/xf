@@ -7,6 +7,8 @@
   "files": ["./dist"],
   "type": "module",
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "tsc",
     "lint": "biome lint",
     "lint:fix": "biome check --write",
     "test": "vitest run --typecheck --coverage.thresholds.100",
