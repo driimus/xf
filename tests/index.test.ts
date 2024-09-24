@@ -1,18 +1,20 @@
 import { randomInt, randomUUID } from "node:crypto";
-import { describe, expectTypeOf, it } from "vitest";
-import { xf } from "./index.js";
+import { describe, expect, it } from "vitest";
+import { xf } from "../src/index.js";
 
 describe("xf", async () => {
   describe("#define", () => {
     it("should combine inputs into a new transformer", () => {
+      type TransformInput = {
+        name: string;
+        age: number;
+      };
+      
       type Input = Record<
-        string,
-        (obj: {
-          name: string;
-          age: number;
-        }) => unknown
+      string,
+      (obj: TransformInput) => unknown
       >;
-
+      
       const a = {
         id() {
           return "1";
@@ -23,14 +25,15 @@ describe("xf", async () => {
           return { id: obj.name };
         },
       } satisfies Input;
-
+      
       const transformer = xf.define(a, b);
-
-      expectTypeOf(transformer).toMatchTypeOf(a);
-      expectTypeOf(transformer).toMatchTypeOf(b);
+      
+      expect(Object.getOwnPropertyNames(a)).toStrictEqual(["id"]);
+      expect(Object.getOwnPropertyNames(b)).toStrictEqual(["parent"]);
+      expect(Object.getOwnPropertyNames(transformer)).toStrictEqual(["id", "parent"]);
     });
   });
-
+  
   describe("#toObject", () => {
     it("should transform the input object", () => {
       const obj = {
@@ -39,7 +42,7 @@ describe("xf", async () => {
         id: randomUUID(),
         age: randomInt(100),
       };
-
+      
       const out = xf.toObject(
         {
           doubleAge(obj) {
@@ -51,8 +54,11 @@ describe("xf", async () => {
         },
         obj,
       );
-
-      expectTypeOf(out).toEqualTypeOf<{ doubleAge: number; fullName: string }>();
+      
+      expect(out).toStrictEqual({
+        doubleAge: obj.age * 2,
+        fullName: `${obj.firstName} ${obj.lastName}`,
+      });
     });
   });
 });
