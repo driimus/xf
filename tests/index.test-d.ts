@@ -31,7 +31,7 @@ describe("xf", async () => {
     });
   });
 
-  describe("#toObject", () => {
+  describe("#apply", () => {
     it("should transform the input object", () => {
       const obj = {
         firstName: "C",
@@ -40,7 +40,7 @@ describe("xf", async () => {
         age: randomInt(100),
       };
 
-      const out = xf.toObject(
+      const out = xf.apply(
         {
           doubleAge(obj) {
             return obj.age * 2;
