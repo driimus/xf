@@ -72,7 +72,7 @@ export const apply = <TIn, TOut, T extends PropertyTransformer<TIn, TOut>>(
  *     fullName(user) { return `${user.firstName} ${user.lastName}`; },
  *   } satisfies PropertyTransformer<User>,
  *   {
- *     type(user) { return user.type ?? 'user' },
+ *     type(user) { return user.type ?? 'user'; },
  *   } satisfies PropertyTransformer<User>,
  * );
  * ```
