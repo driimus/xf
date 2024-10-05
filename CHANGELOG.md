@@ -1,5 +1,11 @@
 # @driimus/xf
 
+## 0.2.1
+
+### Patch Changes
+
+- 4318287: docs: usage examples
+
 ## 0.2.0
 
 ### Minor Changes
