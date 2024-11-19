@@ -1,6 +1,6 @@
 {
   "name": "@driimus/xf",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Per-property object transformation",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",

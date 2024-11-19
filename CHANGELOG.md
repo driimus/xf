@@ -1,5 +1,11 @@
 # @driimus/xf
 
+## 0.2.2
+
+### Patch Changes
+
+- b5e1790: refactor: inline type assertion for object entries
+
 ## 0.2.1
 
 ### Patch Changes
