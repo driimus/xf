@@ -13,8 +13,6 @@ type TransformOutput<T extends PropertyTransformer> = Simplify<{
 
 type Entry<T extends PropertyTransformer> = [keyof T, T[keyof T]];
 
-const entries = Object.entries as <T extends PropertyTransformer>(obj: T) => Entry<T>[];
-
 /**
  * Creates a new object containing all the transformed properties.
  *
@@ -45,7 +43,7 @@ export const apply = <TIn, TOut, T extends PropertyTransformer<TIn, TOut>>(
 ): TransformOutput<T> => {
   const out: Partial<TransformOutput<T>> = {};
 
-  for (const [property, transform] of entries(transformer))
+  for (const [property, transform] of (Object.entries as <T extends PropertyTransformer>(obj: T) => Entry<T>[])(transformer))
     out[property] = transform(data) as (typeof out)[typeof property];
 
   return out as TransformOutput<T>;
