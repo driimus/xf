@@ -17,7 +17,7 @@
     "ci:version": "changeset version",
     "ci:publish": "changeset publish"
   },
-  "keywords": [],
+  "keywords": ["transformer", "dto"],
   "author": {
     "name": "Cristian Petre",
     "email": "driimus@vivaldi.net"
