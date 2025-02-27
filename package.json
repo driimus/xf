@@ -17,7 +17,10 @@
     "ci:version": "changeset version",
     "ci:publish": "changeset publish"
   },
-  "keywords": ["transformer", "dto"],
+  "keywords": [
+    "transformer",
+    "dto"
+  ],
   "author": {
     "name": "Cristian Petre",
     "email": "driimus@vivaldi.net"
@@ -34,7 +37,7 @@
     "url": "https://github.com/driimus/xf/issues"
   },
   "homepage": "https://github.com/driimus/xf#readme",
-  "packageManager": "pnpm@10.2.0+sha256.72f1630812107c8723eb5be4517725f3e13f09cfd8f71571cf29f23ce318bdb7",
+  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@changesets/cli": "^2.27.12",
