@@ -1,6 +1,6 @@
 {
   "name": "@driimus/xf",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Per-property object transformation",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,10 @@
     "ci:version": "changeset version",
     "ci:publish": "changeset publish"
   },
-  "keywords": ["transformer", "dto"],
+  "keywords": [
+    "transformer",
+    "dto"
+  ],
   "author": {
     "name": "Cristian Petre",
     "email": "driimus@vivaldi.net"

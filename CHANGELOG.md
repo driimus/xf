@@ -1,5 +1,11 @@
 # @driimus/xf
 
+## 0.2.3
+
+### Patch Changes
+
+- 7296712: docs: nested transform
+
 ## 0.2.2
 
 ### Patch Changes
